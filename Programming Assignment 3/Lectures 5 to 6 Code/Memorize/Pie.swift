@@ -1,9 +1,3 @@
-//
-//  Pie.swift
-//  Memorize
-//
-//  Created by Arteezy on 7/4/21.
-//
 
 import SwiftUI
 
