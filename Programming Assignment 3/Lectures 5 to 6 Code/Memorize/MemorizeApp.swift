@@ -1,9 +1,3 @@
-//
-//  MemorizeApp.swift
-//  Memorize
-//
-//  Created by Arteezy on 6/29/21.
-//
 
 import SwiftUI
 
