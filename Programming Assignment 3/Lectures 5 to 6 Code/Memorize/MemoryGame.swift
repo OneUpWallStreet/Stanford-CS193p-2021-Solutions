@@ -1,9 +1,3 @@
-//
-//  MemoryGame.swift
-//  Memorize
-//
-//  Created by Arteezy on 6/30/21.
-//
 
 import Foundation
 
