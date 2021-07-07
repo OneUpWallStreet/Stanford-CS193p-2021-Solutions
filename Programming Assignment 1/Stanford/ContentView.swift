@@ -1,9 +1,3 @@
-//
-//  ContentView.swift
-//  Memorize
-//
-//  Created by OneUpWallStreet on 6/29/21.
-//
 
 import SwiftUI
 
