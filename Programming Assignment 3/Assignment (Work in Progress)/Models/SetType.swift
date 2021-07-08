@@ -1,0 +1,34 @@
+//
+//  SetType.swift
+//  SoloSet
+//
+//  Created by Arteezy on 7/6/21.
+//
+
+import Foundation
+
+
+struct CardSet {
+    var shape: CardShapes
+    var color: String
+    var shapeProperty: ShapePropertyType
+    var numberOfShapes: Int
+}
+
+enum CardShapes {
+    case Rectangle
+    case Dimond
+    case Capsule
+}
+
+
+//strokedSymbol, filledSymbol and shadedSymbol
+
+enum ShapePropertyType {
+    case strokedSymbol
+    case filledSymbol
+    case shadedSymbol
+}
+
+
+
