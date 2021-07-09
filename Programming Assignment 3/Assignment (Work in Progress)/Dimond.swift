@@ -1,9 +1,3 @@
-//
-//  Dimond.swift
-//  SoloSet
-//
-//  Created by Arteezy on 7/7/21.
-//
 
 //import SwiftUI
 //

@@ -3,42 +3,25 @@
 import SwiftUI
 
 struct CardView: View {
-    
-    var numberOfShapes: Int
-    var shape: CardShapes
-    var shapeProperty: ShapePropertyType
+
+    var card: SetModel.Card
     
     var body: some View {
-        
-//        GeometryReader{ geometry in
-        
+
             ZStack{
-                let RR = RoundedRectangle(cornerRadius: 10)
-                RR.fill().foregroundColor(.white)
-                RR.stroke(lineWidth: 3)
-//                VStack{
-////                    Spacer()
-//                    Rectangle().foregroundColor(.black).padding().aspectRatio(2/1,contentMode: .fit)
-////                    Spacer()
-//                    Rectangle().foregroundColor(.black).padding().aspectRatio(2/1,contentMode: .fit)
-//                    Rectangle().foregroundColor(.black).padding().aspectRatio(2/1,contentMode: .fit)
-//                }
-
+                if card.isPicked == true{
+                    let RR = RoundedRectangle(cornerRadius: 10)
+                    RR.fill().foregroundColor(.white)
+                    RR.stroke(lineWidth: 3).foregroundColor(.green)
+                }
+                else{
+                    let RR = RoundedRectangle(cornerRadius: 10)
+                    RR.fill().foregroundColor(.white)
+                    RR.stroke(lineWidth: 3).foregroundColor(.pink)
+                }
                 
-                returnShape(numberOfShapes: numberOfShapes, shape: shape, shapeProperty: shapeProperty)
-            }
-            
-//        }
-    }
-    private func font(in size: CGSize ) -> Font{
-        Font.system(size: min(size.width,size.height)*DrawingConstants.fontScale)
-        
-    }
-    
-}
 
-//struct CardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CardView(content: )
-//    }
-//}
+                returnShape(numberOfShapes: card.numberOfShapes, shape: card.shape, shapeProperty: card.shapeProperty,color: card.color)
+            }
+    }
+}

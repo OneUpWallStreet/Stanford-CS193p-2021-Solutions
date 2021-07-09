@@ -1,16 +1,10 @@
-//
-//  SetType.swift
-//  SoloSet
-//
-//  Created by Arteezy on 7/6/21.
-//
 
 import Foundation
-
+import SwiftUI
 
 struct CardSet {
     var shape: CardShapes
-    var color: String
+    var color: Color
     var shapeProperty: ShapePropertyType
     var numberOfShapes: Int
 }
@@ -20,7 +14,6 @@ enum CardShapes {
     case Dimond
     case Capsule
 }
-
 
 //strokedSymbol, filledSymbol and shadedSymbol
 
