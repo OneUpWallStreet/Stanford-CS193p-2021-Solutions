@@ -20,12 +20,14 @@ class Deck {
     var deck: Array<CardSet>
     init() {
         deck = Array<CardSet>()
-        var colors: [Color] = [.red, .gray, .green, .yellow, .blue]
+        let colors: [Color] = [.orange, .yellow, .purple]
 //        var dog: Color
         for shapeIndex in shapes.indices{
             for shapePropertiesIndex in shapeProperties.indices{
                 for numberOfShapesIndex in numberOfShapes.indices{
-                    deck.append(CardSet(shape: shapes[shapeIndex], color: colors[1], shapeProperty: shapeProperties[shapePropertiesIndex], numberOfShapes: numberOfShapes[numberOfShapesIndex]))
+                    for colorIndex in colors.indices{
+                        deck.append(CardSet(shape: shapes[shapeIndex], color: colors[colorIndex], shapeProperty: shapeProperties[shapePropertiesIndex], numberOfShapes: numberOfShapes[numberOfShapesIndex]))
+                    }
                 }
             }
         }

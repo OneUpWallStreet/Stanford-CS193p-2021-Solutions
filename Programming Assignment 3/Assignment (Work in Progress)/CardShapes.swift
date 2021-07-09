@@ -7,38 +7,38 @@ func returnShape (numberOfShapes: Int,shape: CardShapes,shapeProperty: ShapeProp
     case .Dimond:
         switch shapeProperty {
             case ShapePropertyType.filledSymbol:
-                dimondFilled(numberOfShapes: numberOfShapes)
+                dimondFilled(numberOfShapes: numberOfShapes,color: color)
                 
             case ShapePropertyType.shadedSymbol:
-                dimondShaded(numberOfShapes: numberOfShapes)
+                dimondShaded(numberOfShapes: numberOfShapes,color: color)
                 
             case ShapePropertyType.strokedSymbol:
-                dimondStroked(numberOfShapes: numberOfShapes)
+                dimondStroked(numberOfShapes: numberOfShapes,color: color)
         }
         
     case .Rectangle:
         switch shapeProperty {
             case ShapePropertyType.filledSymbol:
-                rectFilled(numberOfShapes: numberOfShapes)
+                rectFilled(numberOfShapes: numberOfShapes,color: color)
 
             case ShapePropertyType.shadedSymbol:
-                rectShaded(numberOfShapes: numberOfShapes)
+                rectShaded(numberOfShapes: numberOfShapes,color: color)
 
             case ShapePropertyType.strokedSymbol:
-                rectStroked(numberOfShapes: numberOfShapes)
+                rectStroked(numberOfShapes: numberOfShapes,color: color)
 
         }
         
     case .Capsule:
         switch shapeProperty {
             case ShapePropertyType.filledSymbol:
-                capsuleFilled(numberOfShapes: numberOfShapes)
+                capsuleFilled(numberOfShapes: numberOfShapes,color: color)
                 
             case ShapePropertyType.shadedSymbol:
-                capsuleShaded(numberOfShapes: numberOfShapes)
+                capsuleShaded(numberOfShapes: numberOfShapes,color: color)
                 
             case ShapePropertyType.strokedSymbol:
-                capsuleStroked(numberOfShapes: numberOfShapes)
+                capsuleStroked(numberOfShapes: numberOfShapes,color: color)
         }
     }
 }
