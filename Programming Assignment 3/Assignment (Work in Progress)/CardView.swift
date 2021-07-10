@@ -1,5 +1,3 @@
-//func returnShape (numberOfShapes: Int,shape: CardShapes,shapeProperty: ShapePropertyType) -> some View{
-
 import SwiftUI
 
 struct CardView: View {
@@ -8,14 +6,21 @@ struct CardView: View {
     
     var body: some View {
 
+            let RR = RoundedRectangle(cornerRadius: 10)
             ZStack{
-                if card.isPicked == true{
-                    let RR = RoundedRectangle(cornerRadius: 10)
-                    RR.fill().foregroundColor(.white)
-                    RR.stroke(lineWidth: 3).foregroundColor(.green)
+                if card.isPicked == true && card.pairMatch == false{
+                    RR.fill().foregroundColor(.pink).opacity(0.2)
+                    RR.stroke(lineWidth: 7).foregroundColor(.secondary)
+                    
                 }
+                
+                else if card.isPicked == true && card.pairMatch == true{
+                    RR.fill().foregroundColor(.green).opacity(0.4)
+                    RR.stroke(lineWidth: 3).foregroundColor(.black)
+                    
+                }
+                
                 else{
-                    let RR = RoundedRectangle(cornerRadius: 10)
                     RR.fill().foregroundColor(.white)
                     RR.stroke(lineWidth: 3).foregroundColor(.pink)
                 }

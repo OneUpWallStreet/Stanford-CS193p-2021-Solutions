@@ -3,19 +3,11 @@ import Foundation
 
 class SoloSetGame: ObservableObject {
     
-    static var deckk = Deck()
+    static var deckBlueprint = Deck()
 
     
-//    CardSet(shape: CardShapes.Dimond, color: "blue", shapeProperty: ShapePropertyType.filledSymbol, numberOfShapes: 2)
-    var shapes = [CardShapes.Rectangle,CardShapes.Capsule,CardShapes.Dimond]
-    var shapeProperties = [ShapePropertyType.filledSymbol,ShapePropertyType.shadedSymbol,ShapePropertyType.strokedSymbol]
-//    private var colors: [Color] = [.yellow, .purple, .green]
-    var numberOfShapes = [1,2,3]
-    
-  
-    @Published private var model: SetModel = SetModel(numberOfCards: SoloSetGame.deckk.deck.count){ index in
-        deckk.deck[index]
-        
+    @Published var model: SetModel = SetModel(numberOfCards: SoloSetGame.deckBlueprint.deck.count){ index in
+        deckBlueprint.deck[index]
     }
     
     var cards: Array<SetModel.Card>{
@@ -25,6 +17,12 @@ class SoloSetGame: ObservableObject {
     func choose(card: SetModel.Card){
         model.choose(card: card)
         
+    }
+    
+    func dealThreeMoreCards(){
+        
+        let dealtCards = SoloSetGame.deckBlueprint.getThreeMoreCards()
+        model.acceptDealtCards(dealtCards: dealtCards)
     }
 
 }
@@ -49,6 +47,21 @@ class SoloSetGame: ObservableObject {
 
 
 
+
+//    var deck: Array<CardSet>
+//    var deckCounter: Int = 0
+//
+//    init() {
+//        deck = Array<CardSet>()
+//
+//        for index in 0..<12{
+//            deck.append(SoloSetGame.deckBlueprint.wholeDeck[index])
+//            deckCounter += 1
+//        }
+//
+//        print(SoloSetGame.deckBlueprint.wholeDeck)
+//
+//    }
 
 
 

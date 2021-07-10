@@ -16,7 +16,6 @@ func rectFilled(numberOfShapes: Int,color: Color) -> some View {
             Rectangle().aspectRatio(2/1,contentMode: .fit).foregroundColor(color)
         }.padding()
        
-        
     }
     else if numberOfShapes == 2 {
         VStack{

@@ -2,7 +2,7 @@
 import Foundation
 import SwiftUI
 
-struct CardSet {
+struct CardSet: Equatable{
     var shape: CardShapes
     var color: Color
     var shapeProperty: ShapePropertyType
