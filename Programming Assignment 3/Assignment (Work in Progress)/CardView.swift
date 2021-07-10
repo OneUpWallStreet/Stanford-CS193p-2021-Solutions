@@ -1,4 +1,3 @@
-//func returnShape (numberOfShapes: Int,shape: CardShapes,shapeProperty: ShapePropertyType) -> some View{
 
 import SwiftUI
 
