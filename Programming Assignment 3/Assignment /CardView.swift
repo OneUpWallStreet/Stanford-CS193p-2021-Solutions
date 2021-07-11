@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> de3dd0cd15f9f9fce4c65bde610abd69ac8c2018
 import SwiftUI
 
 struct CardView: View {
@@ -13,14 +9,14 @@ struct CardView: View {
             let RR = RoundedRectangle(cornerRadius: 10)
             ZStack{
                 if card.isPicked == true && card.pairMatch == false{
-                    RR.fill().foregroundColor(.pink).opacity(0.2)
-                    RR.stroke(lineWidth: 7).foregroundColor(.secondary)
+                    RR.fill().foregroundColor(.pink).opacity(0.1)
+                    RR.stroke(lineWidth: 5).foregroundColor(.blue)
                     
                 }
                 
                 else if card.isPicked == true && card.pairMatch == true{
-                    RR.fill().foregroundColor(.green).opacity(0.4)
-                    RR.stroke(lineWidth: 3).foregroundColor(.black)
+                    RR.fill().foregroundColor(.pink).opacity(0.4)
+                    RR.stroke(lineWidth: 3).foregroundColor(.white)
                     
                 }
                 

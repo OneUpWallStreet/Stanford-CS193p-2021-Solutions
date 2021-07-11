@@ -4,6 +4,8 @@ import Foundation
 class SoloSetGame: ObservableObject {
     
     static var deckBlueprint = Deck()
+    @Published var deckCount: Int = 12
+    @Published var gameOver: Bool = false
 
     
     @Published var model: SetModel = SetModel(numberOfCards: SoloSetGame.deckBlueprint.deck.count){ index in
@@ -14,15 +16,51 @@ class SoloSetGame: ObservableObject {
         return model.cards
     }
     
+    func resetGame(){
+        
+        SoloSetGame.deckBlueprint = Deck()
+        deckCount = 12
+        model = SetModel(numberOfCards: SoloSetGame.deckBlueprint.deck.count){ index in
+            SoloSetGame.deckBlueprint.deck[index]
+        }
+        gameOver = false
+
+        
+    }
+    
     func choose(card: SetModel.Card){
         model.choose(card: card)
+        
+        
+        if  SoloSetGame.deckBlueprint.wholeDeck.count == 0 && deckCount == 81 && model.cards.count == 3 {
+            print("Game Over Here")
+            gameOver = true
+            return
+        }
+        
+        if model.cards.count  == 3 {
+            for _ in 0..<3{
+                dealThreeMoreCards()
+
+            }
+        }
+        
+        
         
     }
     
     func dealThreeMoreCards(){
         
+        if deckCount >= 81 {
+            return
+        }
+        deckCount += 3
+        print(deckCount)
+        
         let dealtCards = SoloSetGame.deckBlueprint.getThreeMoreCards()
         model.acceptDealtCards(dealtCards: dealtCards)
+        
+//        deckCount = model.totalCardsInDeck
     }
 
 }

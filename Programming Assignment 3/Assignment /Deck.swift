@@ -7,6 +7,7 @@ struct Deck {
         var shapes = [CardShapes.Rectangle,CardShapes.Capsule,CardShapes.Dimond]
         var shapeProperties = [ShapePropertyType.filledSymbol,ShapePropertyType.shadedSymbol,ShapePropertyType.strokedSymbol]
         var numberOfShapes = [1,2,3]
+        
     
     var deck: Array<CardSet>
     var wholeDeck: Array<CardSet>
@@ -29,7 +30,7 @@ struct Deck {
             }
         }
         
-//        wholeDeck.shuffle()
+        wholeDeck.shuffle()
         print("Deck Count is: \(wholeDeck.count)")
         
         
@@ -43,14 +44,25 @@ struct Deck {
     }
     
     mutating func getThreeMoreCards() -> Array<CardSet> {
+        
 
         var returnCards: Array<CardSet> = []
         
         for index in 0..<3{
-            returnCards.append(wholeDeck[index])
-            wholeDeck.remove(at: index)
+            print("Whole Deck Count: ",wholeDeck.count)
+            
+            if wholeDeck.count == 1 {
+                returnCards.append(wholeDeck[0])
+                wholeDeck.remove(at: 0)
+            }
+            else{
+                returnCards.append(wholeDeck[index])
+                wholeDeck.remove(at: index)
+            }
+
+            
+            
         }
-        
         return returnCards
     }
     

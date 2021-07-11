@@ -7,9 +7,11 @@ struct SetModel {
     var cards = Array<Card>()
     var cardIndexForId: Int = 0
     var doCardsMatch: Bool = false
+//    var gameOver: Bool = false
     
 //    This is to store the cards to filter them later
     var selectedCardsToRemove: Array<SelectedCards> = []
+    
 
     mutating func checkMatchingCards(Selectedcards: Array<SelectedCards>) -> Bool{
         
@@ -17,7 +19,7 @@ struct SetModel {
         let indexCard2: Int = Selectedcards[1].index
         let indexCard3: Int = Selectedcards[2].index
         
-        if
+        if 
             (cards[indexCard1].color == cards[indexCard2].color && cards[indexCard3].color == cards[indexCard1].color && cards[indexCard2].color == cards[indexCard3].color)
             ||
             (cards[indexCard1].numberOfShapes == cards[indexCard2].numberOfShapes && cards[indexCard3].numberOfShapes == cards[indexCard1].numberOfShapes && cards[indexCard2].numberOfShapes == cards[indexCard3].numberOfShapes)
@@ -26,10 +28,15 @@ struct SetModel {
             ||
             (cards[indexCard1].shape == cards[indexCard2].shape && cards[indexCard3].shape == cards[indexCard1].shape && cards[indexCard2].shape == cards[indexCard3].shape)
         {
-//          Chaning so that they are coloured in green becuase all 3 matched
+//          Changing so that they are coloured in green becuase all 3 matched
             cards[indexCard1].pairMatch = true
             cards[indexCard2].pairMatch = true
             cards[indexCard3].pairMatch = true
+            
+//            if cards.count == 3{
+//                gameOver = true
+//            }
+//            
             
             selectedCardsToRemove = Selectedcards
             
@@ -44,7 +51,7 @@ struct SetModel {
     func findIndex(card: Card) -> Int?{
         for index in cards.indices{
             if card.numberOfShapes == cards[index].numberOfShapes && card.color == cards[index].color && card.shape == cards[index].shape && card.shapeProperty == cards[index].shapeProperty{
-                print("Index im removing at:  \(index) AND THE CARD is: \(card)")
+//                print("Index im removing at:  \(index) AND THE CARD is: \(card)")
                 return index
             }
         }
@@ -75,7 +82,7 @@ struct SetModel {
             for index in cards.indices{
                 
                 if cards[index].isPicked == true{
-                    print("In true btw Card no: \(cards[index].numberOfShapes) And Card Col: \(cards[index].color ) AND property: \(cards[index].shapeProperty)")
+//                    print("In true btw Card no: \(cards[index].numberOfShapes) And Card Col: \(cards[index].color ) AND property: \(cards[index].shapeProperty)")
                 }
                 
             }
@@ -90,20 +97,24 @@ struct SetModel {
         for index in cards.indices{
             if card.numberOfShapes == cards[index].numberOfShapes && card.color == cards[index].color && card.shape == cards[index].shape && card.shapeProperty == cards[index].shapeProperty{
                 indexOfChosenCard = index
-                print("\n")
-                print("Card no: \(cards[indexOfChosenCard!].numberOfShapes) And Card Col: \(cards[indexOfChosenCard!].color ) AND property: \(cards[indexOfChosenCard!].shapeProperty)")
-                print("\n")
+//                print("\n")
+//                print("Card no: \(cards[indexOfChosenCard!].numberOfShapes) And Card Col: \(cards[indexOfChosenCard!].color ) AND property: \(cards[indexOfChosenCard!].shapeProperty)")
+//                print("\n")
             }
+        }
+        
+//        If the already selected card is chosen than nothing happens
+        if indexOfChosenCard == nil {
+            return
         }
         
 //      Check how many cards are already selected
         for index in cards.indices{
             if cards[index].isPicked==true{
                 cardsAlreadySelected.append(SelectedCards(index: index))
-                print("Card picked up: \(cards[index].numberOfShapes) And Card Col: \(cards[index].color ) AND property: \(cards[index].shapeProperty)")
+//                print("Card picked up: \(cards[index].numberOfShapes) And Card Col: \(cards[index].color ) AND property: \(cards[index].shapeProperty)")
             }
         }
-        print("indexOfChosenCard: ")
         cardsAlreadySelected.append(SelectedCards(index: indexOfChosenCard!))
         
         cardsAlreadySelected = cardsAlreadySelected.removeDuplicates()
@@ -138,6 +149,9 @@ struct SetModel {
             cards.append(Card(id: cardIndexForId, shape:  dealtCards[index].shape, color: dealtCards[index].color, shapeProperty: dealtCards[index].shapeProperty, numberOfShapes: dealtCards[index].numberOfShapes))
             cardIndexForId += 1
         }
+        
+//        print("Return Card Count: ",cards.count)
+        
         
     }
     
