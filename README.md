@@ -34,5 +34,5 @@ Also check out how Swift works [Apple's documentation](https://swift.org/documen
 
 ## Thank You's
 
-Thank You [Stanford](https://www.stanford.edu) and[Paul Anthony Hegarty](https://profiles.stanford.edu/paul-hegarty) 
+Thank You [Stanford](https://www.stanford.edu) and [Paul Anthony Hegarty](https://profiles.stanford.edu/paul-hegarty) 
 
