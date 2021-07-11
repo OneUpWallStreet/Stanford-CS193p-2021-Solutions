@@ -23,7 +23,7 @@ Visit [CS193p's webiste](https://cs193p.sites.stanford.edu)  for all the details
 ## CheckList
 
 - [ ] Complete All Asssignments 
-- [x ] Write Bad Code
+- [x] Write Bad Code
 - [ ] Finish All The Reading Material.
 - [ ] Watch All The Lectures.
 
