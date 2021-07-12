@@ -32,11 +32,7 @@ struct SetModel {
             cards[indexCard1].pairMatch = true
             cards[indexCard2].pairMatch = true
             cards[indexCard3].pairMatch = true
-            
-//            if cards.count == 3{
-//                gameOver = true
-//            }
-//            
+
             
             selectedCardsToRemove = Selectedcards
             
@@ -51,7 +47,6 @@ struct SetModel {
     func findIndex(card: Card) -> Int?{
         for index in cards.indices{
             if card.numberOfShapes == cards[index].numberOfShapes && card.color == cards[index].color && card.shape == cards[index].shape && card.shapeProperty == cards[index].shapeProperty{
-//                print("Index im removing at:  \(index) AND THE CARD is: \(card)")
                 return index
             }
         }
@@ -65,7 +60,6 @@ struct SetModel {
         let cardsToRemove: Array<Card> = [cards[indexOfMatchingCards[0]],cards[indexOfMatchingCards[1]],cards[indexOfMatchingCards[2]]]
         for card in cardsToRemove{
             let indexToRemove = findIndex(card: card)
-//            print(indexToRemove!)
             cards.remove(at: indexToRemove!)
 
         }
@@ -78,14 +72,6 @@ struct SetModel {
         if doCardsMatch == true {
             removeMatchingCards()
             doCardsMatch = false
-            
-            for index in cards.indices{
-                
-                if cards[index].isPicked == true{
-//                    print("In true btw Card no: \(cards[index].numberOfShapes) And Card Col: \(cards[index].color ) AND property: \(cards[index].shapeProperty)")
-                }
-                
-            }
         }
         
         var indexOfChosenCard: Int?
@@ -97,9 +83,6 @@ struct SetModel {
         for index in cards.indices{
             if card.numberOfShapes == cards[index].numberOfShapes && card.color == cards[index].color && card.shape == cards[index].shape && card.shapeProperty == cards[index].shapeProperty{
                 indexOfChosenCard = index
-//                print("\n")
-//                print("Card no: \(cards[indexOfChosenCard!].numberOfShapes) And Card Col: \(cards[indexOfChosenCard!].color ) AND property: \(cards[indexOfChosenCard!].shapeProperty)")
-//                print("\n")
             }
         }
         
@@ -112,19 +95,16 @@ struct SetModel {
         for index in cards.indices{
             if cards[index].isPicked==true{
                 cardsAlreadySelected.append(SelectedCards(index: index))
-//                print("Card picked up: \(cards[index].numberOfShapes) And Card Col: \(cards[index].color ) AND property: \(cards[index].shapeProperty)")
             }
         }
         cardsAlreadySelected.append(SelectedCards(index: indexOfChosenCard!))
         
         cardsAlreadySelected = cardsAlreadySelected.removeDuplicates()
-//        cardsAlreadySelected.removeDuplicates()
 
         
 //        
         if cardsAlreadySelected.count>2{
             doCardsMatch = checkMatchingCards(Selectedcards: cardsAlreadySelected)
-//            print("SetModel.DocardsMatch: ",doCardsMatch)
 //            If cards don't match than do this
             if doCardsMatch == false {
                 for index in cardsAlreadySelected.indices{
@@ -149,9 +129,6 @@ struct SetModel {
             cards.append(Card(id: cardIndexForId, shape:  dealtCards[index].shape, color: dealtCards[index].color, shapeProperty: dealtCards[index].shapeProperty, numberOfShapes: dealtCards[index].numberOfShapes))
             cardIndexForId += 1
         }
-        
-//        print("Return Card Count: ",cards.count)
-        
         
     }
     
@@ -198,42 +175,3 @@ extension Array where Element:Equatable {
     }
 }
 
-
-
-
-
-
-
-//
-//        var indexCount = 0
-//        for index in indexOfMatchingCards {
-//
-//
-//            if indexCount == 0{
-//                print("0 -Removing Card no: \(cards[index].numberOfShapes) And Card Col: \(cards[index].color ) AND property: \(cards[index].shapeProperty)")
-//                cards.remove(at: index)
-//
-//            }
-//
-//            else if indexCount == 1{
-//
-//                var newIndex = index-1
-//                if newIndex < 0 {
-//                    newIndex = 0
-//                }
-//                print("1 - Removing Card no: \(cards[newIndex].numberOfShapes) And Card Col: \(cards[newIndex].color ) AND property: \(cards[newIndex].shapeProperty)")
-//                cards.remove(at: newIndex)
-//            }
-//
-//            else if indexCount == 2{
-//                var newIndex = index-2
-//
-//                if newIndex < 0 {
-//                    newIndex = 0
-//                }
-//                print("2 - Removing Card no: \(cards[newIndex].numberOfShapes) And Card Col: \(cards[newIndex].color ) AND property: \(cards[newIndex].shapeProperty)")
-//                cards.remove(at: newIndex)
-//            }
-//            indexCount += 1
-//
-//        }
