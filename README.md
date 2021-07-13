@@ -16,6 +16,9 @@ I have included the code that is written during the lecutres and the code that w
     - [Lecture Code](https://github.com/OneUpWallStreet/Stanford-CS193p-2021-Solutions/tree/master/Lectures%205%2C6/Lectures%205%20to%206%20Code)
     - [Assignment 2 Code](https://github.com/OneUpWallStreet/Stanford-CS193p-2021-Solutions/tree/master/Lectures%205%2C6/Assignment%20)
 
+4. Lecture 7-8
+    - [Lecture Code](https://github.com/OneUpWallStreet/Stanford-CS193p-2021-Solutions/tree/master/Lectures%207%2C8/Lectures%207%20to%208%20Code)
+    - [Assignment 3 Code](https://github.com/OneUpWallStreet/Stanford-CS193p-2021-Solutions/tree/master/Lectures%207%2C8/Assignment)
 
 If you looked at the code you can probably tell that im not a Stanford student lol. I was able to attend the course becuase they made it available for free! 
 Visit [CS193p's webiste](https://cs193p.sites.stanford.edu)  for all the details, there you can find all the lecutres, programming assignments and also reading material for learning/understanding swift.
