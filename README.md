@@ -27,7 +27,7 @@ Visit [CS193p's webiste](https://cs193p.sites.stanford.edu)  for all the details
 
 - [ ] Complete All Asssignments 
 - [x] Write Bad Code
-- [ ] Finish All The Reading Material.
+- [x] Finish All The Reading Material.
 - [ ] Watch All The Lectures.
 
 ## Extra Links
